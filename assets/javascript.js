@@ -10,6 +10,7 @@ console.log(timer.innerHTML);
 
 let counter = 10;
 function quizCountDown() {
+    document.querySelector("header").style.visibility = "visible";
 let timerCountDown = setInterval(function() {
     console.log(counter);
     timer.innerHTML = counter
