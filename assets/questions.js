@@ -1,9 +1,7 @@
-const questions = [];
+const questions = [q1, ];
 
-const question1 = {
+const q1 = {
     question: "The external JavaScript file must contain /<script> tag. True or False?",
-    answerOpt1: "True",
-    answerOpt2: "False",
+    answerOps: ["True", "False"],
     correctAns: "False",
-
 };
