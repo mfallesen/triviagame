@@ -1,4 +1,9 @@
+/* potentially hidden at start of game */
 header {
     float: right;
     margin-right: 50px;
+}
+
+.funky {
+    background: salmon;
 }
