@@ -13,6 +13,7 @@ console.log(timer.innerHTML);
 let counter = 3; // return to 100 and delete
 function quizCountDown() {
     document.querySelector("header").style.visibility = "visible";
+    document.querySelector("#quizStart").style.visibility = "hidden";
     questionPrinter();
     let timerCountDown = setInterval(function () {
         console.log(counter);
