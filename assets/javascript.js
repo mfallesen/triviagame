@@ -32,14 +32,14 @@ function quizCountDown() {
 
 
 
-console.log(questionMatrix[0].question);
+console.log(questionMatrix[2].question);
 function questionPrinter() {
     console.log("hi there");
     quizBox.removeChild(quizBox.firstElementChild);
-    quizBox.firstElementChild.innerHTML = questionMatrix[0].question;
-    for (var i = 0; i < questionMatrix[0].answerOps.length; i++) {
+    quizBox.firstElementChild.innerHTML = questionMatrix[2].question;
+    for (var i = 0; i < questionMatrix[2].answerOps.length; i++) {
         let ansBtn = document.createElement("button");
-        let ans = questionMatrix[0].answerOps[i];
+        let ans = questionMatrix[2].answerOps[i];
         ansBtn.setAttribute("class", "button is-primary");
         quizBox.appendChild(ansBtn);
         ansBtn.innerHTML = ans;
