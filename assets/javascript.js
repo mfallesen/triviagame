@@ -26,9 +26,6 @@ function quizCountDown() {
     }, 1000);
 };
 
-// window.addEventListener("click", )
-document.querySelector("#quizStart").addEventListener("click", quizCountDown)
-
 
 // Print questions and answers to screen
 
@@ -42,16 +39,18 @@ function questionPrinter() {
     for (var i = 0; i < questionMatrix[0].answerOps.length; i++) {
         let ansBtn = document.createElement("button");
         let ans = questionMatrix[0].answerOps[i];
+        ansBtn.setAttribute("class", "button is-primary");
         quizBox.appendChild(ansBtn);
         ansBtn.innerHTML = ans;
-        
     }
 };
 
 // Event listeners for clicks
-
+document.querySelector("#quizStart").addEventListener("click", quizCountDown)
 
 // Validate user input and print to screen
+
+//if inner.HTML === correctAns
 
 
 // Clear Screen and print new question.
