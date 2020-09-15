@@ -1,8 +1,11 @@
 /* potentially hidden at start of game */
 header {
+    position: relative;
     float: right;
     margin-right: 50px;
     visibility: hidden;
+    background:white;
+    z-index: 1;
 }
 
 .funky {
