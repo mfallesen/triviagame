@@ -13,9 +13,11 @@ const questionMatrix = questions;
 
 
 function quizCountDown() {
+    //display timer
     document.querySelector("header").style.visibility = "visible";
+    //remove start button
     document.querySelector("#quizStart").style.visibility = "hidden";
-    quizBox.removeChild(quizBox.firstElementChild);
+    quizBox.removeChild(quizBox.firstElementChild); //removes H1 header
     questionPrinter();
     counterStart();
 };
@@ -35,25 +37,38 @@ function counterStart() {
     }, 1000);
 }
 
+// function printScore(){
+
+// }
+
+
 // console.log(questionMatrix[2].question);
 
 //prints a question and answer buttons to the screen. 
 function questionPrinter() {
-    // removes the h1 header
+    //clear HTML from #question-container
     quizBox.firstElementChild.innerHTML = "";
+    //create wrapper div
     let nuDiv = document.createElement("div");
+    //create empty paragraph
     let nuPar = document.createElement("p");
+    //set text of new paragraph
     nuPar.textContent = questionMatrix[qIndex].question;
+    //adds the paragraph and its text to the wrapper div
     nuDiv.appendChild(nuPar);
     // loops through the question object and creates a button for each answer
     for (var i = 0; i < questionMatrix[qIndex].answerOps.length; i++) {
-        
+        //declare buttons and the answers that go in the buttons
         let ansBtn = document.createElement("button");
         let ans = questionMatrix[qIndex].answerOps[i];
-        ansBtn.setAttribute("class", "button is-primary answer-button");
+        //set style classes for Bulma
+        ansBtn.setAttribute("class", "button is-primary");
+        // set button text
         ansBtn.textContent = ans;
+        // adds the buttons to the document
         nuDiv.appendChild(ansBtn);
     }
+    //adds the wrapper div and the paragraph it contains to the article
     quizBox.firstElementChild.appendChild(nuDiv);
 };
 
