@@ -40,20 +40,21 @@ function counterStart() {
 //prints a question and answer buttons to the screen. 
 function questionPrinter() {
     // removes the h1 header
-    quizBox.firstElementChild.innerHTML = "<p> </p>";
-    //populates the question
-    quizBox.firstElementChild.textContent = questionMatrix[qIndex].question;
+    quizBox.firstElementChild.innerHTML = "";
+    let nuDiv = document.createElement("div");
+    let nuPar = document.createElement("p");
+    nuPar.textContent = questionMatrix[qIndex].question;
+    nuDiv.appendChild(nuPar);
     // loops through the question object and creates a button for each answer
     for (var i = 0; i < questionMatrix[qIndex].answerOps.length; i++) {
+        
         let ansBtn = document.createElement("button");
         let ans = questionMatrix[qIndex].answerOps[i];
         ansBtn.setAttribute("class", "button is-primary answer-button");
-        ansBtn.setAttribute("id", i)
-        quizBox.appendChild(ansBtn);
         ansBtn.textContent = ans;
-        
+        nuDiv.appendChild(ansBtn);
     }
-    
+    quizBox.firstElementChild.appendChild(nuDiv);
 };
 
 // Event listeners for clicks
