@@ -8,7 +8,7 @@ const questionMatrix = questions;
 
 // Game initialization script including timer
 
-console.log(timer.textContent);
+// console.log(timer.textContent);
 
 let counter = 3; // return to 100 and delete
 function quizCountDown() {
@@ -36,7 +36,7 @@ function counterStart() {
 
 
 
-console.log(questionMatrix[2].question);
+// console.log(questionMatrix[2].question);
 
 //prints a question and answer buttons to the screen. 
 function questionPrinter() {
@@ -63,12 +63,12 @@ document.querySelector("#quizStart").addEventListener("click", quizCountDown)
 // Validate user input and print to screen
 // 
 document.querySelector("#question-container").addEventListener("click", function (event) {
-    console.log("I clicked inside the div");
-    console.log(event);
-    if (event.target.button.matches(".answer-button")) {
+    // console.log("I clicked inside the div");
+    // console.log(event.target.textContent);
+    if (event.target.textContent === questionMatrix[2].correctAns) {
         console.log("this is a button click");
     }
-})
+});
 
 
 //function ansClick() {
