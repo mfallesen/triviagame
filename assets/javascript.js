@@ -41,6 +41,7 @@ function questionPrinter() {
         let ansBtn = document.createElement("button");
         let ans = questionMatrix[2].answerOps[i];
         ansBtn.setAttribute("class", "button is-primary");
+        ansBtn.setAttribute("id", i)
         quizBox.appendChild(ansBtn);
         ansBtn.innerHTML = ans;
     }

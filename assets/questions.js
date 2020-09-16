@@ -21,45 +21,45 @@ const q3 = {
 };
 
 const q4 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "Which of the following is not a valid JavaScript variable name?",
+answerOps: ["2names", "_first_and_last_names", "FirstAndLast", "None of the above"],
+    correctAns: "2names",
 };
 
 const q5 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "When a user views a page containing a JavaScript program, which machine actually executes the script?",
+    answerOps: ["The User's machine running a Web browser", "The Web server", "A central machine deep within Netscape's corporate offices", "None of the above"],
+    correctAns: "The User's machine running a Web browser",
 };
 
 const q6 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "_____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.",
+    answerOps: ["Client-side", "Server-side", "Local", "Native"],
+    correctAns: "Client-side",
 };
 
 const q7 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "Which of the following is not a JavaScript Data Type?",
+    answerOps: ["Undefined", "Number", "Boolean", "Float"],
+    correctAns: "Float",
 };
 
 const q8 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "What are the types of Pop up boxes available in JavaScript?",
+    answerOps: ["Alert", "Prompt", "Confirm", "All of the above"],
+    correctAns: "All of the above",
 };
 
 const q9 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "Javascript string using double quotes is exactly the same as a string using single quotes?",
+    answerOps: ["True", "False"],
+    correctAns: "True",
 };
 
 const q10 = {
-    question: "",
-    answerOps: "",
-    correctAns: "",
+    question: "Arrays are a Data Type in JavaScript",
+    answerOps: ["True", "False", ],
+    correctAns: "False",
 };
 
 
