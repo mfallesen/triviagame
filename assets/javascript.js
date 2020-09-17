@@ -1,13 +1,15 @@
 // global variables declared here
 let timer = document.querySelector("#timer");
 let quizBox = document.querySelector("#question-container");
-let score = timer.textContent;
+let timerCountDown;
 let qIndex = 0;
 let counter = 30; // return to 100 and delete
 let testActive = false;
+let hsList = window.localStorage;
 // Question and Answer objects got here
 const questionMatrix = questions;
-
+hsList.setItem("mycat", "Tom");
+console.log(hsList);
 // Game initialization script including timer
 
 
@@ -23,7 +25,7 @@ function quizCountDown() {
 };
 
 function counterStart() {
-    let timerCountDown = setInterval(function () {
+        timerCountDown = setInterval(function () {
         testActive = true;
         console.log(counter);
         timer.textContent = counter
@@ -52,22 +54,35 @@ function questionPrinter() {
     let nuDiv = document.createElement("div");
     //create empty paragraph
     let nuPar = document.createElement("p");
-    //set text of new paragraph
-    nuPar.textContent = questionMatrix[qIndex].question;
-    //adds the paragraph and its text to the wrapper div
-    nuDiv.appendChild(nuPar);
-    // loops through the question object and creates a button for each answer
-    for (var i = 0; i < questionMatrix[qIndex].answerOps.length; i++) {
-        //declare buttons and the answers that go in the buttons
-        let ansBtn = document.createElement("button");
-        let ans = questionMatrix[qIndex].answerOps[i];
-        //set style classes for Bulma
-        ansBtn.setAttribute("class", "button is-primary");
-        // set button text
-        ansBtn.textContent = ans;
-        // adds the buttons to the document
-        nuDiv.appendChild(ansBtn);
+
+
+    if (qIndex > 9) {
+        clearInterval(timerCountDown);
+        let score = timer.textContent;
+        let nameInput = document.createElement("input");
+        quizBox.firstElementChild.innerHTML = "";
+        nuPar.textContent = "You got " + score + " points!";
+        nuDiv.appendChild(nuPar);
+        nuDiv.appendChild(nameInput);
+    } else {
+        //set text of new paragraph
+        nuPar.textContent = questionMatrix[qIndex].question;
+        //adds the paragraph and its text to the wrapper div
+        nuDiv.appendChild(nuPar);
+        // loops through the question object and creates a button for each answer
+        for (var i = 0; i < questionMatrix[qIndex].answerOps.length; i++) {
+            //declare buttons and the answers that go in the buttons
+            let ansBtn = document.createElement("button");
+            let ans = questionMatrix[qIndex].answerOps[i];
+            //set style classes for Bulma
+            ansBtn.setAttribute("class", "button is-primary");
+            // set button text
+            ansBtn.textContent = ans;
+            // adds the buttons to the document
+            nuDiv.appendChild(ansBtn);
+        }
     }
+
     //adds the wrapper div and the paragraph it contains to the article
     quizBox.firstElementChild.appendChild(nuDiv);
 };
