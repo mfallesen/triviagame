@@ -85,23 +85,33 @@ document.querySelector("#quizStart").addEventListener("click", quizCountDown)
 document.querySelector("#question-container").addEventListener("click", function (event) {
 
     if (event.target.textContent === questionMatrix[qIndex].correctAns) {
-        console.log("this is a button click");
         qIndex++
         questionPrinter();
         //insert next question and update score
     } else {
-        console.log("this is the wrong button click")
+        // disable wrong button
         event.target.setAttribute("disabled", true)
         counter -= 10;
     }
 });
 
-function saveScore() {
+function scoreSaver() {
+    //clear the div
+    quizBox.firstElementChild.innerHTML = "";
+    
     let score = timer.textContent;
     let nameInput = document.createElement("input");
-    let nameBtn = document.createElement("button")
-    nameBtn.setAttribute("class", "button is-primary")
-    quizBox.firstElementChild.innerHTML = "";
+    let nameBtn = document.createElement("button");
+    
+    nameInput.setAttribute("class", "input is-primary")
+    
+    nameBtn.setAttribute("class", "button is-primary");
+    nameBtn.setAttribute("id", "nameSub")
+    nameBtn.textContent = "Submit your Score!";
+
+    
+    
+   
     nuPar.textContent = "You got " + score + " points!";
     nuDiv.appendChild(nuPar);
     nuDiv.appendChild(nameInput);
