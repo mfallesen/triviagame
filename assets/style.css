@@ -14,3 +14,9 @@ header {
 .button {
     margin: 15px;
 }
+
+#quizStartSpan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
