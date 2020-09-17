@@ -3,7 +3,7 @@ let timer = document.querySelector("#timer");
 let quizBox = document.querySelector("#question-container");
 let timerCountDown;
 let qIndex = 0;
-let counter = 30; // return to 100 and delete
+let counter = 60; // return to 100 and delete
 let testActive = false;
 let hsList = window.localStorage;
 let nuDiv = document.createElement("div");
@@ -36,7 +36,7 @@ function counterStart() {
         if (counter <= -1) {
             clearInterval(timerCountDown);
             testActive = false;
-            counter = 3; //return to 100 and delete
+            counter = 60; //return to 100 and delete
         };
     }, 1000);
 }
@@ -95,7 +95,7 @@ document.querySelector("#question-container").addEventListener("click", function
     }
 });
 
-function scoreSaver() {
+function saveScore() {
     //clear the div
     quizBox.firstElementChild.innerHTML = "";
     
@@ -103,9 +103,11 @@ function scoreSaver() {
     let nameInput = document.createElement("input");
     let nameBtn = document.createElement("button");
     
-    nameInput.setAttribute("class", "input is-primary")
+    nameInput.setAttribute("class", "input is-primary");
+    nameInput.setAttribute("id", "playerName")
     
     nameBtn.setAttribute("class", "button is-primary");
+    nameBtn.setAttribute("onclick", "playerScore");
     nameBtn.setAttribute("id", "nameSub")
     nameBtn.textContent = "Submit your Score!";
 
@@ -116,6 +118,14 @@ function scoreSaver() {
     nuDiv.appendChild(nuPar);
     nuDiv.appendChild(nameInput);
     nuDiv.appendChild(nameBtn);
+
+
+
+}
+
+function playerScore() {
+    let player = document.getElementById("playerName");
+    console.log("player");
 }
 
 
